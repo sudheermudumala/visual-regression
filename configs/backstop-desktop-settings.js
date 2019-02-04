@@ -40,7 +40,7 @@ if (arguments.paths) {
   pathString = arguments.paths;
   var paths = pathString.split(',');
 } else if (arguments.pathfile) {
-  var pathConfig = require('./'+arguments.pathfile+'.js');
+  var pathConfig = require('../'+arguments.pathfile+'.js');
   var paths = pathConfig.array;
 } else {
   var paths = defaultPaths; // keep with the default of just the homepage
