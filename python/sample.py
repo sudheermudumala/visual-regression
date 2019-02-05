@@ -2,7 +2,7 @@ import json
 
 print("hello world")
 
-f=open("../backstop_data/html_report/config.js","r")
+f=open("backstop_data/html_report/config.js","r")
 if f.mode=="r":
 	contents=f.read()
 #	print(contents)
