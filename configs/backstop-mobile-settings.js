@@ -27,11 +27,11 @@ var scenarios = []; // The array that'll have the pages to test
  */
 // The host to test
 if (!arguments.testhost) {
-  arguments.testhost  = "http://local.example.com"; // Default test host
+  arguments.testhost  = "https://stage.weather.com"; // Default test host
 }
 // The host to reference
 if (!arguments.refhost) {
-  arguments.refhost  = "http://example.com"; // Default test host
+  arguments.refhost  = "https://weather.com"; // Default test host
 }
 /*
   Work out which paths to use, either a supplied array, an array from a file, or the defaults
@@ -81,7 +81,7 @@ module.exports =
     "html_report": "backstop_data/html_report",
     "ci_report": "backstop_data/ci_report"
   },
-  "report": ["browser"],
+  "report": ["CI"],
   "engine": "puppeteer",
   "engineOptions": {
     "args": ["--no-sandbox"]
