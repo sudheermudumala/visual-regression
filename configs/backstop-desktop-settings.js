@@ -81,7 +81,7 @@ module.exports =
     "html_report": "backstop_data/html_report",
     "ci_report": "backstop_data/ci_report"
   },
-  "report": ["CI"],
+  "report": ["browser"],
   "engine": "puppeteer",
   "engineOptions": {
     "args": ["--no-sandbox"]
@@ -91,3 +91,11 @@ module.exports =
   "debug": false,
   "debugWindow": false
 };
+
+
+function report(report){
+  window.tests=report;
+}
+
+
+console.log("hi");
