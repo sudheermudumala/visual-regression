@@ -52,7 +52,7 @@ for (var k = 0; k < paths.length; k++) {
     "label": paths[k],
     "referenceUrl": arguments.refhost+paths[k],
     "url": arguments.testhost+paths[k],
-    "delay":"5000",
+    "delay":5000,
     "hideSelectors": [],
     "removeSelectors": [],
     "selectors": [],
