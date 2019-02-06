@@ -2,9 +2,10 @@ import csv
 import os
 import sys
 
-os.remove('../urls/test.js')
+if os.path.exists('urls/test.js'):
+	os.remove('urls/test.js')
 
-f=open('../urls/urls_master.csv')
+f=open('urls/urls_master.csv')
 csv_f = csv.reader(f)
 
 csv_heading = next(csv_f)
@@ -55,7 +56,7 @@ print scenario
 f.close()
 
 
-f=open('../urls/test.js','w+')
+f=open('urls/test.js','w+')
 f.write(scenario)
 f.close()
 
