@@ -1,0 +1,6 @@
+"label","referenceUrl","url","selectors"
+"homePage","/","/",""
+"todayPage","/weather/today/l/USDC0001:1:US","/weather/today/l/USDC0001:1:US",""
+"houlryPage","/weather/hourbyhour/l/USDC0001:1:US","/weather/hourbyhour/l/USDC0001:1:US",""
+"5day","/weather/5day/l/USDC0001:1:US","/weather/5day/l/USDC0001:1:US",""
+"10day","/weather/tenday/l/USDC0001:1:US","/weather/tenday/l/USDC0001:1:US",""

@@ -19,46 +19,20 @@
   Set up some variables
  */
 var arguments = require('minimist')(process.argv.slice(2)); // grabs the process arguments
+var pathConfig = require('../'+arguments.pathfile);
 var defaultPaths = ['/']; // By default is just checks the homepage
-var scenarios = []; // The array that'll have the pages to test
+var scenarios = pathConfig.array
 
 /*
   Work out the environments that are being compared
  */
 // The host to test
 if (!arguments.testhost) {
-  arguments.testhost  = "http://local.example.com"; // Default test host
+  arguments.testhost  = "https://stage.weather.com"; // Default test host
 }
 // The host to reference
 if (!arguments.refhost) {
-  arguments.refhost  = "http://example.com"; // Default test host
-}
-/*
-  Work out which paths to use, either a supplied array, an array from a file, or the defaults
- */
-if (arguments.paths) {
-  pathString = arguments.paths;
-  var paths = pathString.split(',');
-} else if (arguments.pathfile) {
-  var pathConfig = require('../'+arguments.pathfile+'.js');
-  var paths = pathConfig.array;
-} else {
-  var paths = defaultPaths; // keep with the default of just the homepage
-}
-
-
-for (var k = 0; k < paths.length; k++) {
-  scenarios.push({
-    "label": paths[k],
-    "referenceUrl": arguments.refhost+paths[k],
-    "url": arguments.testhost+paths[k],
-    "delay":5000,
-    "hideSelectors": [],
-    "removeSelectors": [],
-    "selectors": [],
-    "readyEvent": null,
-    "misMatchThreshold" : 0.1,
-  });
+  arguments.refhost  = "https://weather.com"; // Default test host
 }
 
 // Configuration
@@ -92,11 +66,3 @@ module.exports =
   "debug": false,
   "debugWindow": false
 };
-
-
-function report(report){
-  window.tests=report;
-}
-
-
-console.log("hi");
