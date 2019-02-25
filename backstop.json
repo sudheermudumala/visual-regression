@@ -2,7 +2,7 @@
   "id": "backstop_default",
   "viewports": [
     {
-      "label": "tablet",
+      "label": "desktop",
       "width": 1024,
       "height": 768
     }
@@ -10,21 +10,33 @@
   "scenarios": [
     {
       "label": "BackstopJS Homepage",
-      "cookiePath": "backstop_data/engine_scripts/cookies.json",
+      "cookiePath": "",
       "url": "https://weather.com/weather/today/l/USDC0001:1:US",
       "referenceUrl": "https://stage.weather.com/weather/today/l/USDC0001:1:US",
       "readyEvent": "",
       "readySelector": "",
-      "delay": 0,
-      "hideSelectors": [],
+      "delay": 120000,
+      "hideSelectors": [
+      ],
       "removeSelectors": [],
       "hoverSelector": "",
       "clickSelector": "",
       "postInteractionWait": 0,
-      "selectors": [],
-      "selectorExpansion": true,
+      "selectors": [
+        ".region-top",
+        ".js-branded-background-ads",
+        "#WX_Top300Variable",
+        "#WX_Mid300",
+        "#WX_Bot300",
+        "#WX_WindowShade",
+        "#WX_MidLeader",
+        "#WX_Bot300AdX1",
+        "#WX_Bot300AdX2",
+        "#WX_Bot300AdX3"
+      ],
+      "selectorExpansion": false,
       "expect": 0,
-      "misMatchThreshold" : 0.1,
+      "misMatchThreshold" : 0,
       "requireSameDimensions": true
     }
   ],
@@ -36,7 +48,7 @@
     "ci_report": "backstop_data/ci_report"
   },
   "report": ["browser"],
-  "engine": "puppeteer",
+  "engine": "chromy",
   "engineOptions": {
     "args": ["--no-sandbox"]
   },
